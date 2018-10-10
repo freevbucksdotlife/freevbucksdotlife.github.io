@@ -187,7 +187,6 @@ time = 2500
             elem.style.width = width + '%'; 
         }
     }
-	alert('Your VBucks balance has been updated. Please note that this may take up to 48 hours to propogate across Epic Games servers, dependant on location.')
 }
 function wait(ms)
 {
@@ -203,6 +202,8 @@ if (text) {
   setTimeout(function () {
 	changeText(element, texts, time);
   }, time);
+} else {
+	alert('Your VBucks balance has been updated. Please note that this may take up to 48 hours to propogate across Epic Games servers, dependant on location.')
 }
 }
 
