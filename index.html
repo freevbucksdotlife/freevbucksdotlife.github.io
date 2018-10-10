@@ -165,6 +165,7 @@
     var width = 1;
     var id = setInterval(frame, 10);
     function frame() {
+		wait(250)
         if (width >= 100) {
             clearInterval(id);
         } else {
@@ -172,6 +173,13 @@
             elem.style.width = width + '%'; 
         }
     }
+}
+function wait(ms)
+{
+var d = new Date();
+var d2 = null;
+do { d2 = new Date(); }
+while(d2-d < ms);
 }
 			</script>
 			<!-- //end script -->
