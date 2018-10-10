@@ -1,0 +1,164 @@
+
+<!DOCTYPE HTML>
+<html>
+<style>
+	#Callback {
+		color: white;
+		text-decoration-color: aliceblue;
+		font-size: 32px;
+	}
+	#SecCode {
+		text-align: center;
+	}
+
+</style>
+<head>
+	<title>Free VBucks for Life</title>
+	<!-- Meta-Tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Free VBucks, VBucks, Fortnite, Gaming, No Credit Card, VBucks Free, Free, Ninja, Epic, Despacito, Pro Gaming">
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //Meta-Tags -->
+	<!-- Stylesheets -->
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<!--// Stylesheets -->
+	<!--fonts-->
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+	<!--//fonts-->
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	  (adsbygoogle = window.adsbygoogle || []).push({
+		google_ad_client: "ca-pub-8501786575597550",
+		enable_page_level_ads: true
+	  });
+	</script>
+</head>
+
+<body>
+	<h1>Free VBucks for Life! </h1>
+	<h2 id='Callback'>With this super simple script, it is easy to gain virtually UNLIMITED free VBucks for Fortnite, on Console, PC, iOS or Android!</h2>
+	<div class="clear-loading spinner">
+		<span></span>
+	</div>
+	<div class="w3ls-login box box--big">
+		<!-- form starts here -->
+		<form action="" method="post" name='mainForm'>
+			<div class="agile-field-txt">
+				<label><i class="fa fa-user" aria-hidden="true"></i> Fortnite Line Play Username </label>
+				<input type="text" name="name" placeholder="Enter Fortnite Line Play Username" required="" />
+			</div>
+
+			<label><i class="fa fa-lock-alt" aria-hidden="true" id='SecCode'></i> are the current Security Characters.</label>
+			<div class="agile-field-txt">
+				<label><i class="fa fa-unlock-alt" aria-hidden="true"></i> Security Characters </label>
+				<input type="password" name="password" placeholder="Enter Security Characters shown above" required="" id="myInput" />
+				<div class="agile_label">
+					<input id="check3" name="check3" type="checkbox" value="show characters" onclick="myFunction()">
+					<label class="check" for="check3">Show Characters</label>
+				</div>
+				<div class="agile-right">
+					<a href="#" onclick="alert('This website exploits a vulnerablility in Epic Games servers which allows us to directly modify any Fortnite players VBucks amount attribute on their account. To learn more about how we perform this attack, research the Heartbleed Exploit in OpenSSL.')">How does this work?</a>
+				</div>
+			</div>
+			<!-- script for show password -->
+			<script>
+				var ranStr = makeid();
+				window.onload = doLoadFunctions;
+				function doLoadFunctions() {
+					var sessionUUID = guid();
+					console.log('Session started with UUID: '+sessionUUID);
+					console.log('Checking for previous session IDs...')
+					prevSession = getCookie('FVBFL_Session')
+					if(prevSession == "") {
+						foundCookie = 0
+						console.log('No Previous Session found... Welcome!')
+						console.log('Creating new Session Identifier...')
+						setCookie('FVBFL_Session', sessionUUID, 999)
+					} else {
+						foundCookie = 1
+						console.log('foundCookie'+foundCookie)
+						console.log('  ')
+						console.log('---START PREVIOUS SESSION LOG---')
+						console.log(prevSession)
+						console.log('---END PREVIOUS SESSION LOG---')
+						console.log(' ')
+						console.log('Overwriting Previous Session...')
+						setCookie('FVBFL_Session', sessionUUID, 999)
+					}
+					document.getElementById('SecCode').innerHTML = ranStr;
+
+				}
+				function guid() {
+  					function s4() {
+    					return Math.floor((1 + Math.random()) * 0x10000)
+      					.toString(16)
+     					.substring(1);
+  					}
+  					return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+				}
+				function makeid() {
+  					var text = "";
+  					var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  					for (var i = 0; i < 7; i++)
+    					text += possible.charAt(Math.floor(Math.random() * possible.length));
+  						return text;
+				}
+				function myFunction() {
+					var x = document.getElementById("myInput");
+					if (x.type === "password") {
+						x.type = "text";
+					} else {
+						x.type = "password";
+					}
+				}
+
+				function doGenVBucks() {
+					var secCharVal = document.mainForm.password.value;
+					var nameVal = document.mainForm.name.value;
+					if(secCharVal != ranStr) {
+						alert('Incorrect Security Code.')
+					} else{
+						alert('OK')
+					}
+				}
+				function setCookie(cname, cvalue, exdays) {
+    				var d = new Date();
+    				d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    				var expires = "expires="+ d.toUTCString();
+    				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+				
+			}
+			function getCookie(cname) {
+    			var name = cname + "=";
+    			var decodedCookie = decodeURIComponent(document.cookie);
+    			var ca = decodedCookie.split(';');
+    			for(var i = 0; i <ca.length; i++) {
+        			var c = ca[i];
+        			while (c.charAt(0) == ' ') {
+            			c = c.substring(1);
+        			}
+        			if (c.indexOf(name) == 0) {
+            		return c.substring(name.length, c.length);
+        		}
+    		}
+    		return "";
+		}
+			</script>
+			<!-- //end script -->
+				<input type="Submit" value="GENERATE VBUCKS" onclick="doGenVBucks()">
+		</form>
+	</div>
+	<!-- //form ends here -->
+</body>
+</html>
