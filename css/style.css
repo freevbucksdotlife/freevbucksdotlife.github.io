@@ -430,7 +430,7 @@ label.check {
 :-moz-placeholder { /* Firefox 18- */
   color: #aaa;
 }
-.w3ls-login input[type=submit] {
+.w3ls-login input[type=Button] {
     color: #fff;
     width: 50%;
 	margin: auto;
