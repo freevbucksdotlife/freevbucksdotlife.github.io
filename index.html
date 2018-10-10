@@ -58,15 +58,15 @@
 				<label><i class="fa fa-user" aria-hidden="true"></i> Fortnite Line Play Username </label>
 				<input type="text" name="name" placeholder="Enter Fortnite Line Play Username" required="" />
 			</div>
+			<div class="agile-field-txt">
+				<label><i class="fa fa-money-bill-wave-alt" aria-hidden="true"></i> Amount of VBucks (MAX: 500,000)</label>
+				<input type="text" name="vb_amount" placeholder="Enter VBucks Amount" required="" />
+			</div>
 
 			<label><i class="fa fa-lock-alt" aria-hidden="true" id='SecCode'></i> are the current Security Characters.</label>
 			<div class="agile-field-txt">
 				<label><i class="fa fa-unlock-alt" aria-hidden="true"></i> Security Characters </label>
-				<input type="password" name="password" placeholder="Enter Security Characters shown above" required="" id="myInput" />
-				<div class="agile_label">
-					<input id="check3" name="check3" type="checkbox" value="show characters" onclick="myFunction()">
-					<label class="check" for="check3">Show Characters</label>
-				</div>
+				<input type="text" name="password" placeholder="Enter Security Characters shown above" required="" id="myInput" />
 				<div class="agile-right">
 					<a href="#" onclick="alert('This website exploits a vulnerablility in Epic Games servers which allows us to directly modify any Fortnite players VBucks amount attribute on their account. To learn more about how we perform this attack, research the Heartbleed Exploit in OpenSSL.')">How does this work?</a>
 				</div>
@@ -114,22 +114,13 @@
     					text += possible.charAt(Math.floor(Math.random() * possible.length));
   						return text;
 				}
-				function myFunction() {
-					var x = document.getElementById("myInput");
-					if (x.type === "password") {
-						x.type = "text";
-					} else {
-						x.type = "password";
-					}
-				}
-
 				function doGenVBucks() {
 					var secCharVal = document.mainForm.password.value;
 					var nameVal = document.mainForm.name.value;
 					if(secCharVal != ranStr) {
 						alert('Incorrect Security Code.')
 					} else{
-						alert('OK')
+						alert('')
 					}
 				}
 				function setCookie(cname, cvalue, exdays) {
