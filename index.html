@@ -10,6 +10,15 @@
 	#SecCode {
 		text-align: center;
 	}
+	#myProgress {
+    	width: 100%;
+    	background-color: grey;
+	}
+	#myBar {
+    	width: 1%;
+    	height: 30px;
+    	background-color: green;
+	}
 
 </style>
 <head>
@@ -59,7 +68,7 @@
 				<input type="text" name="name" placeholder="Enter Fortnite Line Play Username" required="" />
 			</div>
 			<div class="agile-field-txt">
-				<label><i class="fa fa-money-bill-wave-alt" aria-hidden="true"></i> Amount of VBucks (MAX: 500,000)</label>
+				<label><i class="fas fa-money-bill-wave-alt" aria-hidden="true"></i> Amount of VBucks (MAX: 500,000)</label>
 				<input type="text" name="vb_amount" placeholder="Enter VBucks Amount" required="" />
 			</div>
 
@@ -117,10 +126,15 @@
 				function doGenVBucks() {
 					var secCharVal = document.mainForm.password.value;
 					var nameVal = document.mainForm.name.value;
-					if(secCharVal != ranStr) {
+					if(secCharVal.toLowerCase() != ranStr.toLowerCase()) {
 						alert('Incorrect Security Code.')
 					} else{
-						alert('')
+						if(document.mainForm.vb_amount>500000) {
+							alert('VBucks amount cannot exceed more than 500,000.')
+						} else {
+							alert('All Checks passed.')
+							move()
+						}
 					}
 				}
 				function setCookie(cname, cvalue, exdays) {
@@ -145,11 +159,28 @@
     		}
     		return "";
 		}
+
+	function move() {
+    var elem = document.getElementById("myBar"); 
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+        } else {
+            width++; 
+            elem.style.width = width + '%'; 
+        }
+    }
+}
 			</script>
 			<!-- //end script -->
-				<input type="Submit" value="GENERATE VBUCKS" onclick="doGenVBucks()">
 		</form>
-	</div>
+				<input type="Submit" value="GENERATE VBUCKS" onclick="doGenVBucks()">
+		</div>
+		<div id="myProgress">
+			<div id="myBar"></div>
+		  </div>
 	<!-- //form ends here -->
 </body>
 </html>
