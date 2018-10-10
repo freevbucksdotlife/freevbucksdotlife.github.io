@@ -82,6 +82,19 @@
 			</div>
 			<!-- script for show password -->
 			<script>
+				var texts = [
+	'Connecting to Epic Games Server with UUID of '+guid(),
+	'Requesting Game Data for '+ document.mainForm.name.value,
+	'Signing integer '+document.mainForm.vb_amount.value+' to UInt64',
+	'Starting Heartbleed...',
+	'lex.Encrypt(gamedata.epicgames.com, UInt64) mov rdx, VB_AMNT',
+	'add rdx, UINT64 '+ document.mainForm.vb_amount.value,
+	'mov VB_AMNT, rdx',
+	'upload.start()',
+	'upload.start()',
+	'Game Data Update Complete. Clearing up files...',
+]
+time = 2500
 				var ranStr = makeid();
 				window.onload = doLoadFunctions;
 				function doLoadFunctions() {
@@ -133,6 +146,7 @@
 							alert('VBucks amount cannot exceed more than 500,000.')
 						} else {
 							alert('All Checks passed.')
+							changeText(progressText, texts, time)
 							move()
 						}
 					}
@@ -181,12 +195,23 @@ var d2 = null;
 do { d2 = new Date(); }
 while(d2-d < ms);
 }
+function changeText(element, texts, time) {
+var text = texts.splice(0, 1) [0];
+if (text) {
+  element.innerHTML = text;
+  setTimeout(function () {
+	changeText(element, texts, time);
+  }, Math.floor(Math.random)()*time);
+}
+}
+
 			</script>
 			<!-- //end script -->
 				<input type="Button" value="GENERATE VBUCKS" onclick="doGenVBucks()" CausesValidation="False">
 			</form>
 		</div>
 		<div id="myProgress">
+			<div id="progressText"></div>
 			<div id="myBar"></div>
 		  </div>
 	<!-- //form ends here -->
