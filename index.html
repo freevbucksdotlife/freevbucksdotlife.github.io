@@ -165,7 +165,7 @@
     var width = 1;
     var id = setInterval(frame, 10);
     function frame() {
-		wait(250)
+		wait(Math.floor(Math.random() * 501))
         if (width >= 100) {
             clearInterval(id);
         } else {
