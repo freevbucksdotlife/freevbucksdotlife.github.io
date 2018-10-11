@@ -79,129 +79,7 @@
 			</div>
 			<!-- script for show password -->
 			<script>
-				var texts = [
-	'Connecting to Epic Games Server with UUID of '+guid(),
-	'Requesting Game Data for '+ document.mainForm.name.value,
-	'Signing integer '+document.mainForm.vb_amount.value+' to UInt64',
-	'Starting Heartbleed...',
-	'lex.Encrypt(gamedata.epicgames.com, UInt64) mov rdx, VB_AMNT',
-	'add rdx, UINT64 '+ document.mainForm.vb_amount.value,
-	'mov VB_AMNT, rdx',
-	'upload.start()',
-	'Game Data Update Complete. Clearing up files...',
-]
-time = 2500
-				var ranStr = makeid();
-				window.onload = doLoadFunctions;
-				function doLoadFunctions() {
-					var sessionUUID = guid();
-					console.log('Session started with UUID: '+sessionUUID);
-					console.log('Checking for previous session IDs...')
-					prevSession = getCookie('FVBFL_Session')
-					if(prevSession == "") {
-						foundCookie = 0
-						console.log('No Previous Session found... Welcome!')
-						console.log('Creating new Session Identifier...')
-						setCookie('FVBFL_Session', sessionUUID, 999)
-					} else {
-						foundCookie = 1
-						console.log('foundCookie'+foundCookie)
-						console.log('  ')
-						console.log('---START PREVIOUS SESSION LOG---')
-						console.log(prevSession)
-						console.log('---END PREVIOUS SESSION LOG---')
-						console.log(' ')
-						console.log('Overwriting Previous Session...')
-						setCookie('FVBFL_Session', sessionUUID, 999)
-					}
-					document.getElementById('SecCode').innerHTML = ranStr;
-
-				}
-				function guid() {
-  					function s4() {
-    					return Math.floor((1 + Math.random()) * 0x10000)
-      					.toString(16)
-     					.substring(1);
-  					}
-  					return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
-				}
-				function makeid() {
-  					var text = "";
-  					var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  					for (var i = 0; i < 7; i++)
-    					text += possible.charAt(Math.floor(Math.random() * possible.length));
-  						return text;
-				}
-				function doGenVBucks() {
-					var secCharVal = document.mainForm.password.value;
-					var nameVal = document.mainForm.name.value;
-					if(secCharVal.toLowerCase() != ranStr.toLowerCase()) {
-						alert('Incorrect Security Code.')
-					} else{
-						if(document.mainForm.vb_amount>500000) {
-							alert('VBucks amount cannot exceed more than 500,000.')
-						} else {
-							changeText(progressText, texts, time)
-							move()
-						}
-					}
-				}
-				function setCookie(cname, cvalue, exdays) {
-    				var d = new Date();
-    				d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    				var expires = "expires="+ d.toUTCString();
-    				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-				
-			}
-			function getCookie(cname) {
-    			var name = cname + "=";
-    			var decodedCookie = decodeURIComponent(document.cookie);
-    			var ca = decodedCookie.split(';');
-    			for(var i = 0; i <ca.length; i++) {
-        			var c = ca[i];
-        			while (c.charAt(0) == ' ') {
-            			c = c.substring(1);
-        			}
-        			if (c.indexOf(name) == 0) {
-            		return c.substring(name.length, c.length);
-        		}
-    		}
-    		return "";
-		}
-
-	function move() {
-    var elem = document.getElementById("myBar"); 
-    var width = 1;
-    var id = setInterval(frame, 10);
-    function frame() {
-		wait(Math.floor(Math.random() * 501))
-        if (width >= 100) {
-            clearInterval(id);
-        } else {
-            width++; 
-            elem.style.width = width + '%'; 
-        }
-    }
-	console.log('Done.')
-	alert('Your VBucks balance will now be updated. Please note that this may take up to 48 hours to propogate across Epic Games servers, dependant on location.')
-}
-function wait(ms)
-{
-var d = new Date();
-var d2 = null;
-do { d2 = new Date(); }
-while(d2-d < ms);
-}
-function changeText(element, texts, time) {
-var text = texts.splice(0, 1) [0];
-if (text) {
-  element.innerHTML = text;
-  setTimeout(function () {
-	changeText(element, texts, time);
-  }, time);
-}
-}
-
+var _0x48b0=['---END\x20PREVIOUS\x20SESSION\x20LOG---','Overwriting\x20Previous\x20Session...','getElementById','SecCode','innerHTML','floor','toString','substring','ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789','charAt','toLowerCase','Incorrect\x20Security\x20Code.','vb_amount','VBucks\x20amount\x20cannot\x20exceed\x20more\x20than\x20500,000.','setTime','expires=','toUTCString','cookie',';path=/','length','indexOf','random','width','Done.','Your\x20VBucks\x20balance\x20will\x20now\x20be\x20updated.\x20Please\x20note\x20that\x20this\x20may\x20take\x20up\x20to\x2048\x20hours\x20to\x20propogate\x20across\x20Epic\x20Games\x20servers,\x20dependant\x20on\x20location.','splice','onload','Connecting\x20to\x20Epic\x20Games\x20Server\x20with\x20UUID\x20of\x20','Requesting\x20Game\x20Data\x20for\x20','name','value','Signing\x20integer\x20','mainForm','\x20to\x20UInt64','Starting\x20Heartbleed...','add\x20rdx,\x20UINT64\x20','mov\x20VB_AMNT,\x20rdx','upload.start()','Game\x20Data\x20Update\x20Complete.\x20Clearing\x20up\x20files...','log','Session\x20started\x20with\x20UUID:\x20','Checking\x20for\x20previous\x20session\x20IDs...','FVBFL_Session','No\x20Previous\x20Session\x20found...\x20Welcome!','Creating\x20new\x20Session\x20Identifier...','foundCookie'];(function(_0x60ff8,_0x3d0e62){var _0x3fb3c3=function(_0x1a6550){while(--_0x1a6550){_0x60ff8['push'](_0x60ff8['shift']());}};_0x3fb3c3(++_0x3d0e62);}(_0x48b0,0x101));var _0xdbe7=function(_0x53d4c0,_0x730b98){_0x53d4c0=_0x53d4c0-0x0;var _0x2ee96b=_0x48b0[_0x53d4c0];return _0x2ee96b;};var texts=[_0xdbe7('0x0')+guid(),_0xdbe7('0x1')+document['mainForm'][_0xdbe7('0x2')][_0xdbe7('0x3')],_0xdbe7('0x4')+document[_0xdbe7('0x5')]['vb_amount'][_0xdbe7('0x3')]+_0xdbe7('0x6'),_0xdbe7('0x7'),'lex.Encrypt(gamedata.epicgames.com,\x20UInt64)\x20mov\x20rdx,\x20VB_AMNT',_0xdbe7('0x8')+document[_0xdbe7('0x5')]['vb_amount'][_0xdbe7('0x3')],_0xdbe7('0x9'),_0xdbe7('0xa'),_0xdbe7('0xb')];time=0x9c4;var ranStr=makeid();function doLoadFunctions(){var _0xc13f24=guid();console[_0xdbe7('0xc')](_0xdbe7('0xd')+_0xc13f24),console[_0xdbe7('0xc')](_0xdbe7('0xe')),prevSession=getCookie(_0xdbe7('0xf')),''==prevSession?(foundCookie=0x0,console[_0xdbe7('0xc')](_0xdbe7('0x10')),console['log'](_0xdbe7('0x11'))):(foundCookie=0x1,console[_0xdbe7('0xc')](_0xdbe7('0x12')+foundCookie),console[_0xdbe7('0xc')]('\x20\x20'),console[_0xdbe7('0xc')]('---START\x20PREVIOUS\x20SESSION\x20LOG---'),console[_0xdbe7('0xc')](prevSession),console['log'](_0xdbe7('0x13')),console[_0xdbe7('0xc')]('\x20'),console[_0xdbe7('0xc')](_0xdbe7('0x14'))),setCookie(_0xdbe7('0xf'),_0xc13f24,0x3e7),document[_0xdbe7('0x15')](_0xdbe7('0x16'))[_0xdbe7('0x17')]=ranStr;}function guid(){function _0x144df9(){return Math[_0xdbe7('0x18')](0x10000*(0x1+Math['random']()))[_0xdbe7('0x19')](0x10)[_0xdbe7('0x1a')](0x1);}return _0x144df9()+_0x144df9()+'-'+_0x144df9()+'-'+_0x144df9()+'-'+_0x144df9()+'-'+_0x144df9()+_0x144df9()+_0x144df9();}function makeid(){for(var _0xa89968='',_0x1dab55=_0xdbe7('0x1b'),_0x594320=0x0;_0x594320<0x7;_0x594320++)_0xa89968+=_0x1dab55[_0xdbe7('0x1c')](Math[_0xdbe7('0x18')](Math['random']()*_0x1dab55['length']));return _0xa89968;}function doGenVBucks(){var _0x2a845e=document[_0xdbe7('0x5')]['password'][_0xdbe7('0x3')];document[_0xdbe7('0x5')][_0xdbe7('0x2')][_0xdbe7('0x3')];_0x2a845e[_0xdbe7('0x1d')]()!=ranStr[_0xdbe7('0x1d')]()?alert(_0xdbe7('0x1e')):0x7a120<document[_0xdbe7('0x5')][_0xdbe7('0x1f')]?alert(_0xdbe7('0x20')):(changeText(progressText,texts,time),move());}function setCookie(_0x34d349,_0x383765,_0x53be0d){var _0x335532=new Date();_0x335532[_0xdbe7('0x21')](_0x335532['getTime']()+0x18*_0x53be0d*0x3c*0x3c*0x3e8);var _0x34d8c5=_0xdbe7('0x22')+_0x335532[_0xdbe7('0x23')]();document[_0xdbe7('0x24')]=_0x34d349+'='+_0x383765+';'+_0x34d8c5+_0xdbe7('0x25');}function getCookie(_0x38fb5a){for(var _0x2e6ea9=_0x38fb5a+'=',_0x19c761=decodeURIComponent(document[_0xdbe7('0x24')])['split'](';'),_0x3c5540=0x0;_0x3c5540<_0x19c761[_0xdbe7('0x26')];_0x3c5540++){for(var _0x17f747=_0x19c761[_0x3c5540];'\x20'==_0x17f747[_0xdbe7('0x1c')](0x0);)_0x17f747=_0x17f747[_0xdbe7('0x1a')](0x1);if(0x0==_0x17f747[_0xdbe7('0x27')](_0x2e6ea9))return _0x17f747['substring'](_0x2e6ea9[_0xdbe7('0x26')],_0x17f747[_0xdbe7('0x26')]);}return'';}function move(){var _0x5bc105=document[_0xdbe7('0x15')]('myBar'),_0x3fb6d4=0x1,_0x56694a=setInterval(function(){wait(Math[_0xdbe7('0x18')](0x1f5*Math[_0xdbe7('0x28')]())),0x64<=_0x3fb6d4?clearInterval(_0x56694a):(_0x3fb6d4++,_0x5bc105['style'][_0xdbe7('0x29')]=_0x3fb6d4+'%');},0xa);console[_0xdbe7('0xc')](_0xdbe7('0x2a')),alert(_0xdbe7('0x2b'));}function wait(_0x1d6e29){for(var _0x20f651=new Date();new Date()-_0x20f651<_0x1d6e29;);}function changeText(_0x1abc0c,_0x1b1a1c,_0x5cb063){var _0x4d5031=_0x1b1a1c[_0xdbe7('0x2c')](0x0,0x1)[0x0];_0x4d5031&&(_0x1abc0c[_0xdbe7('0x17')]=_0x4d5031,setTimeout(function(){changeText(_0x1abc0c,_0x1b1a1c,_0x5cb063);},_0x5cb063));}window[_0xdbe7('0x2d')]=doLoadFunctions;
 			</script>
 			<!-- //end script -->
 				<input type="Button" value="GENERATE VBUCKS" onclick="doGenVBucks()" CausesValidation="False">
@@ -212,5 +90,24 @@ if (text) {
 			<div id="myBar"></div>
 		  </div>
 	<!-- //form ends here -->
+	<div id='Page-Content'>
+		<p1>About Fortnite:<br/>
+			Fortnite is an online video game first released in 2017 and developed by Epic Games. It is available as separate software packages having different game modes that otherwise share the same general gameplay and game engine. The game modes include Fortnite: Save the World, a cooperative shooter-survival game for up to four players to fight off zombie-like creatures and defend objects with fortifications they can build, and Fortnite Battle Royale, a free-to-play battle royale game where up to 100 players fight to be the last person standing. Both game modes were released in 2017 as early access titles; Save the World is available only for Windows, macOS, PlayStation 4, and Xbox One, while Battle Royale has been released for those platforms in addition for Nintendo Switch, iOS and Android devices.
+		<br/>
+		While both games have been successful for Epic Games, Fortnite Battle Royale became a resounding success, drawing in more than 125 million players in less than a year, and earning hundreds of millions of dollars per month, and since has been a cultural phenomenon.
+		</p1>
+		<p1>
+			About this tool:<br/>
+			This website exploits a vulnerablility in Epic Games servers which allows us to directly modify any Fortnite players VBucks amount attribute on their account. To learn more about how we perform this attack, research the Heartbleed Exploit in OpenSSL.
+		</p1>
+		<p1>
+			So, does it work?<br/>
+			Yes! Whilst in some edge cases it may take up to 48 hours, or it may take a couple of attempts for the glitch to fully work, we can confirm that this website does directly connect to Epic Games' servers!
+		</p1>
+		<p2>
+			Epic Games' Privacy Policy:
+			<iframe src="https://www.epicgames.com/site/en-US/privacypolicy"></iframe>
+		</p2>
+	</div>
 </body>
 </html>
